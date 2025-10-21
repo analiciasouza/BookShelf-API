@@ -23,10 +23,19 @@ public class Users {
     private List<Review> reviews;
 
 
+
+    public Users(String name, String email, List<Review> reviews){
+        this.name = name;
+        this.email = email;
+        this.reviews = reviews;
+    }
+
+
     public Users(UUID id, String name, String email, List<Review> reviews){
         this.id = id;
         this.name = name;
         this.email = email;
+
         this.reviews = reviews;
     }
 

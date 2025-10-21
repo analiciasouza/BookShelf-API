@@ -25,6 +25,15 @@ public class Review {
     @JoinColumn(name = "books_id")
     private Books book;
 
+    public Review( String textReview, int rating, Users user, Books book){
+        this.textReview = textReview;
+        this.rating = rating;
+        this.user = user;
+        this.book = book;
+
+    }
+
+
     public Review(UUID id, String textReview, int rating, Users user, Books book){
         this.id = id;
         this.textReview = textReview;

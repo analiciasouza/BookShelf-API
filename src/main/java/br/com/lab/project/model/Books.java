@@ -35,6 +35,14 @@ public class Books {
 
     }
 
+    public Books( String title, String genre, String author, List<Review> reviews){
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.reviews = reviews;
+
+    }
+
     public Books(){
 
     }

@@ -1,11 +1,15 @@
 package br.com.lab.project.controllers;
 
 
+import br.com.lab.project.dto.input.CreateBookDTO;
+import br.com.lab.project.mapper.BookMapper;
 import br.com.lab.project.model.Books;
 import br.com.lab.project.service.BookService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Book;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
@@ -16,14 +20,17 @@ import java.util.UUID;
 public class BooksController {
 
     private final BookService bookService;
+    private final BookMapper bookMapper;
 
-    public BooksController(BookService bookService){
+    public BooksController(BookService bookService, BookMapper bookMapper){
         this.bookService = bookService;
+        this.bookMapper = bookMapper;
     }
 
     @PostMapping
-    public ResponseEntity<Void> create(@RequestBody Books book){
-        var bookCreated = bookService.createBook(book);
+    public ResponseEntity<Void> create(@RequestBody @Valid CreateBookDTO bookDTO){
+        Books books = bookMapper.fromCreateDtoToEntity(bookDTO);
+        var bookCreated = bookService.createBook(books);
         URI location = URI.create("/api/v1/books/" + bookCreated.getId());
         return ResponseEntity.created(location).build();
     }
