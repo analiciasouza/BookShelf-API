@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "e27aba11-df18-488f-aeac-86918f9338c5",
+		"name": "Bookshell API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43830001",
+		"_collection_link": "https://anabispo-9532485.postman.co/workspace/Ana-Bispo's-Workspace~6b7bd31b-da20-4dea-82ab-5d2682825327/collection/43830001-e27aba11-df18-488f-aeac-86918f9338c5?action=share&source=collection_link&creator=43830001"
+	},
+	"item": [
+		{
+			"name": "Criar Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Butcher and Blackbird\",\n    \"genre\" : \"Dark Romcom\",\n    \"author\" : \"Brynne Weaver\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/api/v1/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/books"
+			},
+			"response": []
+		},
+		{
+			"name": "List Book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/books/cf7ef1c1-f826-4e52-96fb-c803843a5b71"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"title\": \"The Mindfuck Series\",\n    \"genre\": \"Suspense\",\n    \"author\": \"S.T. Abby\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/api/v1/books/138c79df-c90a-4102-8e5b-1ec4ab6596bf"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/books/138c79df-c90a-4102-8e5b-1ec4ab6596bf"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Ana Bispo\",\n    \"email\" : \"analiciasouza.11@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/users/5faa78e5-2c23-426e-a9ac-c12427eea878"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"textReview\" : \"SOOOO Good!!!\",\n    \"rating\" : 4,\n   \"user\": {\n    \"id\": \"653876e3-6b77-4170-b6d0-4bda43898fe9\"\n  },\n  \"book\": {\n    \"id\": \"2d8a328c-abc3-456a-a2cc-8c2fd87b591a\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/api/v1/reviews"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/v1/reviews"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Reviews",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Reviews",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
